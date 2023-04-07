@@ -10,12 +10,24 @@ import AVFoundation
 
 struct ContentView: View {
     let synthesizer = AVSpeechSynthesizer()
+
     var body: some View {
         VStack {
+
             Button {
-                let utterance = AVSpeechUtterance(string: "Hello World")
-                utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-                synthesizer.speak(utterance)
+                speak(text: "Hello Programming")
+            } label: {
+                Text("Hello Programming")
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(.yellow)
+            .cornerRadius(20)
+
+            Button {
+                speak(text: "Hello World")
             } label: {
                 Text("Hello World")
                     .font(.system(.title, design: .rounded))
@@ -25,9 +37,13 @@ struct ContentView: View {
             .foregroundColor(.white)
             .background(.purple)
             .cornerRadius(20)
-
         }
-        .padding()
+    }
+
+    func speak(text: String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        synthesizer.speak(utterance)
     }
 }
 

@@ -14,10 +14,28 @@ struct ContentView: View {
     var body: some View {
         VStack {
 
+            Text("猜猜这些电影")
+                .font(.title)
+            Text("你能从这些表情猜出电影吗？")
+                .font(.body)
+            Text("点击按钮查看正确答案。")
+                .font(.body)
             Button {
-                speak(text: "Hello Programming")
+                speak(text: "电影1")
             } label: {
-                Text("Hello Programming")
+                Text("🧓👩🏽‍🦱🕵🏿‍♂️")
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(.green)
+            .cornerRadius(20)
+
+            Button {
+                speak(text: "电影2")
+            } label: {
+                Text("🌧️")
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.bold)
             }
@@ -27,15 +45,27 @@ struct ContentView: View {
             .cornerRadius(20)
 
             Button {
-                speak(text: "Hello World")
+                speak(text: "电影3")
             } label: {
-                Text("Hello World")
+                Text("☔️")
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.bold)
             }
             .padding()
             .foregroundColor(.white)
-            .background(.purple)
+            .background(.blue)
+            .cornerRadius(20)
+
+            Button {
+                speak(text: "电影14")
+            } label: {
+                Text("🪐")
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(.gray)
             .cornerRadius(20)
         }
     }
